@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Files</title>
+</head>
+<body>
+
+<h2>Uploaded Files</h2>
+
+<ul>
+  <% files.forEach(file => { %>
+    <li>
+      <%= file.originalname %>
+      (<%= (file.size/1024).toFixed(2) %> KB)
+      <a href="/download/<%= file._id %>">Download</a>
+    </li>
+  <% }) %>
+</ul>
+
+<a href="/">Upload More</a>
+
+</body>
+</html>
